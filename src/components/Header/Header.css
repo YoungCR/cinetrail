@@ -1,0 +1,19 @@
+.header-container {
+    color: var(--white);
+    height: var(--header-height);
+    background-color: var(--transparent-bg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* insert header-light */
+
+/* insert logo css */
+
+.header-buttons-container {
+    display: flex;
+}
