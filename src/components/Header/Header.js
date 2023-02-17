@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Header.css'
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Header() {
-    const darkMode = true;
+    const { darkMode, setDarkMode } = useContext(ThemeContext);
 //copy dark mode state
     const handleTheme = () => {
-        console.log('togggle')
+        console.log('toggle')
         //toggle darkmode
         setDarkMode(!darkMode)
         //save in local storage, saved as opposite initially to avoid errors
@@ -31,8 +32,7 @@ function Header() {
                     <MdOutlineDarkMode className='theme-icon' onClick={handleTheme}/>
                 </div>
             }
-            <MdOutlineLightMode />
-            <MdOutlineDarkMode />
+
             <button className='create-account-btn'>Create an Account</button>
         </div>
     </div>

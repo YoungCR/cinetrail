@@ -2,17 +2,21 @@ import './App.css';
 import Header from './components/Header/Header';
 import Homepage from './pages/Homepage/Homepage';
 import Footer from './components/Footer/Footer';
-import { ThemeContext } from './contexts/ThemeContext'
-//watch last 30min on importing theme context
+import ThemeContextProvider from './contexts/ThemeContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <ThemeContextProvider>
         <Header />
-        <Homepage />
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+        </Routes>
         <Footer />
       </ThemeContextProvider>
+      </BrowserRouter>
     </div>
   );
 }
