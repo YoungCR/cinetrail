@@ -7,4 +7,8 @@
 .homepage-light{
     background-color: var(--white);
     color: black;
+} 
+
+.movies-wrapper {
+    display: flex;
 }
