@@ -7,6 +7,10 @@ function PopularMovies() {
     const apiKey = process.env.REACT_APP_API_KEY;
     const baseURL = process.env.REACT_APP_BASE_URL;
 
+    const pageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    const [page, setPage] = React.useState(1);
+
     // create stat to hold popular movies
     const [newPopularMovies, setNewPopularMovies] = React.useState([]);
     //this component shows all the popular movies
@@ -15,14 +19,14 @@ function PopularMovies() {
     React.useEffect(
         ()=>{
             //call api to get upcoming movie data
-            axios.get(`${baseURL}/movie/popular?api_key=${apiKey}&page=1`)
+            axios.get(`${baseURL}/movie/popular?api_key=${apiKey}&page=${page}`)
             .then(res=>{
                 console.log(res.data.results)
                 //store date in state
                 setNewPopularMovies(res.data.results)
             })
             .catch(err => console.log(err))
-        }, []
+        }, [page]
     )
 
   return (
@@ -32,7 +36,10 @@ function PopularMovies() {
             {newPopularMovies.map(item => <MovieCard key={item.id} movie={item} imageURL={item.poster_path} imgHeight='300px' radius='16px' cardStyle='popular-card'/>)}
         </div>
         <div className='page-numbers'>
-            Page Numbers goe here
+            <p>Select Page</p>
+            {
+                pageNumbers.map(num => <p key={num} onClick={()=>setPage(num)}>{num}</p>)
+            }
         </div>
     </div>
   )

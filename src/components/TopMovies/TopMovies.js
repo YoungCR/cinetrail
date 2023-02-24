@@ -21,7 +21,7 @@ function TopMovies() {
             .then(res=>{
                 console.log(res.data.results)
                 //store date in state
-                setNewTopMovies(res.data.results)
+                setNewTopMovies(res.data.results.slice(0, 10))
             })
             .catch(err => console.log(err))
         }, []
