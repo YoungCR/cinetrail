@@ -24,7 +24,7 @@ function MovieDetails() {
     React.useEffect(
         ()=>{
             //call api to get video info
-            axios.get(`${baseURL}/movie/${movie_id}/videos?api_key=${apiKey}`)
+            axios.get(`${baseURL}/movie/${movieId}/videos?api_key=${apiKey}`)
             .then(res =>{
                 console.log(res.data.results)
                 //i need the one with youtube and trailer
@@ -39,7 +39,7 @@ function MovieDetails() {
             })
             .catch(err => console.log(err))
             //male a[o ca;; tp get all movie info
-            axios.get(`${baseURL}/movie/${movie_id}?api_key=${apiKey}`)
+            axios.get(`${baseURL}/movie/${movieId}?api_key=${apiKey}`)
             .then(res =>{
                 console.log(res.data)
                 setMovie(res.data)
@@ -69,7 +69,7 @@ function MovieDetails() {
             <h2>{movie?.title}</h2>
         </div>
         <div className='info-container'>
-            <img src={`${imageBase}/${movie?.poster_path}`} alt={{movie?.title} Poster} className="details-poster"/>
+        <img src={`${imageBase}/${movie?.poster_path}`} className="details-poster" />
             <div className='movie-details-info'>
                 <h2>{movie?.tagline}</h2>
                 <h4>{movie?.overview}</h4>
