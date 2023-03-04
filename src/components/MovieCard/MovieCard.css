@@ -1,5 +1,17 @@
-.popular-card, .top-rated-card {
+/* .movie-card{
     margin: 10px;
+} */
+
+.popular-card {
+    margin: 10px;
+}
+
+.top-rated-card{
+    margin: 10px;
+}
+
+.top-rated-card p{
+    margin-top: 10px;
 }
 
 .movie-info-top{
@@ -8,6 +20,7 @@
     color: var(--red);
     opacity: 0;
     padding: 10px;
+    
 }
 
 .movie-info-bottom{
@@ -20,6 +33,7 @@
     justify-content: center;
     opacity: 0;
     padding: 10px;
+   
 }
 
 .popular-card:hover .movie-info-top, 

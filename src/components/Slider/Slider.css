@@ -1,5 +1,7 @@
+
+
 .slider-overlay{
-    background: rgb(0,0,0);
+    background: rgb(0,0,0); 
     /* this is fallback color for older browsers*/
     background: linear-gradient(90deg, rgba(0.0.0.1) 0%, rgba(255,255,255,0) 100%);
     position: absolute;
@@ -30,11 +32,13 @@
     bottom: 0; 
     height: 35vh;
     width: 50%;
-    /* z-index: 1; */
+    /* z-index: 2; */
     color: var(--white);
-    padding: 20px;
+    padding-left: 50px;
 }
-
+.slider-movie-info p{
+    margin-bottom: 5px;
+}
 .movie-link{
     color: var(--white);
     cursor: pointer;
